@@ -157,7 +157,7 @@ export const App: React.FC = () => {
 
       {/* Hero Section */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-4 md:px-8">
-        <section className="text-center pt-8 pb-4 md:pt-10 md:pb-6">
+        <section className="text-center pt-2 pb-4 md:pt-4 md:pb-6">
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight mb-6 leading-tight">
             Opciones de regalo para
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300 whitespace-nowrap mt-1">
