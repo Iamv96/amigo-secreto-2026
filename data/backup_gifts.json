@@ -1,0 +1,193 @@
+{
+  "participants": [
+    {
+      "id": "pamela",
+      "name": "Pamela",
+      "order_index": 1,
+      "avatar_color": "from-rose-500 to-pink-600"
+    },
+    {
+      "id": "cote",
+      "name": "Cote",
+      "order_index": 2,
+      "avatar_color": "from-amber-500 to-orange-600"
+    },
+    {
+      "id": "joaquin",
+      "name": "Joaquín",
+      "order_index": 3,
+      "avatar_color": "from-emerald-500 to-teal-600"
+    },
+    {
+      "id": "nacho",
+      "name": "Nacho",
+      "order_index": 4,
+      "avatar_color": "from-blue-500 to-cyan-600"
+    },
+    {
+      "id": "coni",
+      "name": "Coni",
+      "order_index": 5,
+      "avatar_color": "from-purple-500 to-fuchsia-600"
+    },
+    {
+      "id": "ale",
+      "name": "Ale",
+      "order_index": 6,
+      "avatar_color": "from-violet-500 to-indigo-600"
+    },
+    {
+      "id": "carla",
+      "name": "Carla",
+      "order_index": 7,
+      "avatar_color": "from-pink-500 to-rose-600"
+    },
+    {
+      "id": "mindy",
+      "name": "Mindy",
+      "order_index": 8,
+      "avatar_color": "from-teal-500 to-emerald-600"
+    },
+    {
+      "id": "mauri",
+      "name": "Mauri",
+      "order_index": 9,
+      "avatar_color": "from-cyan-500 to-blue-600"
+    },
+    {
+      "id": "tonka",
+      "name": "Tonka",
+      "order_index": 10,
+      "avatar_color": "from-amber-400 to-yellow-600"
+    },
+    {
+      "id": "monse",
+      "name": "Monse",
+      "order_index": 11,
+      "avatar_color": "from-red-500 to-rose-600"
+    }
+  ],
+  "gifts": [
+    {
+      "id": "gift_1795381805432_hwsh5",
+      "participant_id": "carla",
+      "name": "The Vita-A Retinal Shot Tightening Booster",
+      "price": 22800,
+      "url": "https://www.yesstyle.com/en/celimax-the-vita-a-retinal-shot-tightening-booster-15ml/info.html/pid.1130946339",
+      "image_url": "https://d1flfk77wl2xk4.cloudfront.net/Assets/03/274/p0212227403.jpg",
+      "created_at": "2026-11-22T21:10:05.432Z",
+      "updated_at": "2026-11-22T21:10:05.432Z"
+    },
+    {
+      "id": "gift_1795381866781_zsx8u",
+      "participant_id": "carla",
+      "name": "Sérum Niacinamide 10 TXA 4",
+      "price": 26300,
+      "url": "https://www.yesstyle.com/es/info.html/pid.1138060320",
+      "image_url": "https://d1flfk77wl2xk4.cloudfront.net/Assets/49/331/p0225333149.jpg",
+      "created_at": "2026-11-22T21:11:06.781Z",
+      "updated_at": "2026-11-22T21:11:06.781Z"
+    },
+    {
+      "id": "gift_1795381962254_uvqgi",
+      "participant_id": "tonka",
+      "name": "Crema Mighty Bamboo Panthenol",
+      "price": 20900,
+      "url": "https://www.yesstyle.com/es/info.html/pid.1129733663",
+      "image_url": "https://d1flfk77wl2xk4.cloudfront.net/Assets/86/049/p0211004986.jpg",
+      "created_at": "2026-11-22T21:12:42.254Z",
+      "updated_at": "2026-11-22T21:12:42.254Z"
+    },
+    {
+      "id": "gift_1795382010207_7taz0",
+      "participant_id": "tonka",
+      "name": "Crema Facial Oat-In Calming Gel",
+      "price": 19300,
+      "url": "https://www.yesstyle.com/es/purito-seoul-crema-facial-oat-in-calming-gel-100ml/info.html/pid.1105145092",
+      "image_url": "https://d1flfk77wl2xk4.cloudfront.net/Assets/17/106/p0158110617.png",
+      "created_at": "2026-11-22T21:13:30.207Z",
+      "updated_at": "2026-11-22T21:13:30.207Z"
+    },
+    {
+      "id": "gift_1795382063191_ftv7w",
+      "participant_id": "tonka",
+      "name": "Crema De Acido Azelaico 10 The Ordinary 30 Ml",
+      "price": 17400,
+      "url": "https://www.falabella.com/falabella-cl/product/883669698/crema-de-acido-azelaico-10-the-ordinary-30-ml/883669699",
+      "image_url": "https://media.falabella.com/falabellaCL/883669699/public",
+      "created_at": "2026-11-22T21:14:23.191Z",
+      "updated_at": "2026-11-22T21:14:23.191Z"
+    },
+    {
+      "id": "gift_1795382161417_x2raa",
+      "participant_id": "cote",
+      "name": "Bleach Remix 16",
+      "price": 28990,
+      "url": "https://clubdelgoblin.com/products/bleach-remix-16?_pos=12&_sid=173f3ce58&_ss=r&_su_rec=d3s1ihJXnZHeA-ZO0JVsokTFk7CLYM-86yROchBeuGUnZjknWDI36DBcBOkv-Y5mPIjfG6iO7Kz_warIT5pKHoOdey9xIe-SPL5fItIlE3NeL9nQXxQRLFe8qMgZa9j3Z43ZYVroL-4T5DWLdSZD82ds9-ntZBZI3KngVA_RvzkBD_YHqnMT7GP6RyKWA0bRwlkPOvg33xDcxTRqv324coP0GyIgRq7ygKv03bqnp_25oF_x0GBG_eWdZH9FknwfMxdw4dSlFBYNA7ap2DCEcWYXjmnNnWdTj86JN_613g8DMKzfR2_flB-3Ip2QqmVfe48KkWQIG_--7cJNxsYr8POwWoLlueNc7Lmz75F4ZiFPPTgv_-wgChFOxw1MYPPS-wFuNL7GW1EI0NyPpVIDx3hSV05fNqmmE2pbXFg&_su_rec_id=e7b3fc99-172f-4312-b383-fb6c8f883d8d-1795382150",
+      "image_url": "http://clubdelgoblin.com/cdn/shop/files/91585896ec8a43e299980be8ffe22358_1200x1200.jpg?v=1781808907",
+      "created_at": "2026-11-22T21:16:01.417Z",
+      "updated_at": "2026-11-22T21:16:01.417Z"
+    },
+    {
+      "id": "gift_1795382179417_fg5rj",
+      "participant_id": "cote",
+      "name": "Bleach Remix 17",
+      "price": 28990,
+      "url": "https://clubdelgoblin.com/products/bleach-remix-17?_pos=14&_sid=173f3ce58&_ss=r",
+      "image_url": "http://clubdelgoblin.com/cdn/shop/files/bleachremix17_1200x1200.jpg?v=1786032044",
+      "created_at": "2026-11-22T21:16:19.417Z",
+      "updated_at": "2026-11-22T21:16:19.417Z"
+    },
+    {
+      "id": "gift_1795382193665_1uxtr",
+      "participant_id": "cote",
+      "name": "Naruto 15 (Edición 3 en 1)",
+      "price": 32990,
+      "url": "https://clubdelgoblin.com/products/naruto-15?_pos=1&_sid=ae94fdd58&_ss=r",
+      "image_url": "http://clubdelgoblin.com/cdn/shop/files/naruto_15_whakoom_1200x1200.webp?v=1789666504",
+      "created_at": "2026-11-22T21:16:33.665Z",
+      "updated_at": "2026-11-22T21:16:33.665Z"
+    },
+    {
+      "id": "gift_1795382241737_p4foe",
+      "participant_id": "monse",
+      "name": "Gel Limpiador Espumoso 473 mL",
+      "price": 13993,
+      "url": "https://www.cruzverde.cl/gel-limpiador-espumoso-473-ml/291934.html",
+      "image_url": "https://beta.cruzverde.cl/on/demandware.static/-/Sites-masterCatalog_Chile/default/dw768348bf/images/large/291934-1.jpg",
+      "created_at": "2026-11-22T21:17:21.737Z",
+      "updated_at": "2026-11-22T21:17:21.737Z"
+    },
+    {
+      "id": "gift_1795382262993_kessp",
+      "participant_id": "monse",
+      "name": "Loción Hidratante 473 mL",
+      "price": 15990,
+      "url": "https://www.cruzverde.cl/locion-hidratante-473-ml/291911.html",
+      "image_url": "https://beta.cruzverde.cl/on/demandware.static/-/Sites-masterCatalog_Chile/default/dw196fc7d4/images/large/291911-1.jpg",
+      "created_at": "2026-11-22T21:17:42.993Z",
+      "updated_at": "2026-11-22T21:17:42.993Z"
+    },
+    {
+      "id": "gift_1795382335546_1vhpo",
+      "participant_id": "monse",
+      "name": "Tónico Rice 70 Glow Milky Toner 250 ML",
+      "price": 29990,
+      "url": "https://dbs.cl/skincare-tonicos-tonico-lechoso-rice-70-glow-250-ml",
+      "image_url": "https://dbs.cl/media/catalog/product/a/n/anua-anu-73545-1.jpg?optimize=low&amp;bg-color=255,255,255&amp;fit=bounds&amp;height=265&amp;width=265&amp;canvas=265:265",
+      "created_at": "2026-11-22T21:18:55.546Z",
+      "updated_at": "2026-11-22T21:18:55.546Z"
+    },
+    {
+      "id": "gift_1795382877885_obzxw",
+      "participant_id": "cote",
+      "name": "Dinero",
+      "price": null,
+      "url": null,
+      "image_url": null,
+      "created_at": "2026-11-22T21:27:57.885Z",
+      "updated_at": "2026-11-22T21:27:57.885Z"
+    }
+  ],
+  "last_updated": "2026-11-22T21:27:57.886Z"
+}
