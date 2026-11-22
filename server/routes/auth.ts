@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const router = Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'amigo-secreto-navidad-2026-secret-key-render';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'navidad2026';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '19265355';
 
 export interface AuthRequest extends Request {
   isAdmin?: boolean;
