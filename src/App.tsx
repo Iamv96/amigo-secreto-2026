@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Search, Heart, Download, ArrowUpRight, Lock, Unlock, LogOut } from 'lucide-react';
 import { Participant, Gift as GiftType } from './types';
 import { Navbar } from './components/Navbar';
@@ -131,8 +131,25 @@ export const App: React.FC = () => {
     }
   };
 
+  // Priority Sort:
+  // 1. Participants with gift options, sorted alphabetically
+  // 2. Participants without gift options, sorted alphabetically
+  const sortedParticipants = useMemo(() => {
+    return [...participants].sort((a, b) => {
+      const aHasGifts = a.gifts.length > 0;
+      const bHasGifts = b.gifts.length > 0;
+
+      // Group priority: with gifts first
+      if (aHasGifts && !bHasGifts) return -1;
+      if (!aHasGifts && bHasGifts) return 1;
+
+      // Alphabetical comparison in Spanish
+      return a.name.localeCompare(b.name, 'es', { sensitivity: 'base' });
+    });
+  }, [participants]);
+
   // Filter participants
-  const filteredParticipants = participants.filter((p) => {
+  const filteredParticipants = sortedParticipants.filter((p) => {
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.gifts.some((g) => g.name.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -192,7 +209,7 @@ export const App: React.FC = () => {
                 <span className="truncate">Todos ({participants.length})</span>
               </button>
 
-              {participants.map((p) => (
+              {sortedParticipants.map((p) => (
                 <button
                   key={p.id}
                   onClick={() => setSelectedFilter(p.id)}
