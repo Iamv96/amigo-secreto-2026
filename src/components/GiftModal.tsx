@@ -195,7 +195,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({
         <div className="mb-4 p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-200/90 text-xs flex items-start gap-2">
           <Lightbulb className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
           <span>
-            <strong>¿Idea abierta?</strong> Si es algo general (ej: <em>"Un limpiador facial para pieles sensibles"</em> o <em>"Un libro de misterio"</em>), déjalo sin enlace ni foto. Solo escribe el nombre y el presupuesto si lo hay.
+            <strong>¿Opción abierta?</strong> Si es algo general (ej: <em>"Un limpiador facial para pieles sensibles"</em> o <em>"Un libro de misterio"</em>), déjalo sin enlace ni foto. Solo escribe el nombre y el presupuesto si lo hay.
           </span>
         </div>
 
@@ -221,7 +221,7 @@ export const GiftModal: React.FC<GiftModalProps> = ({
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 onBlur={(e) => handleUrlPasteOrBlur(e.target.value)}
-                placeholder="Opcional: https://www.falabella.com/... (déjalo vacío si es idea abierta)"
+                placeholder="Opcional: https://www.falabella.com/... (déjalo vacío si es opción abierta)"
                 className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 pr-24"
               />
 

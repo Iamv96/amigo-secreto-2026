@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Copy, Check, Edit2, Trash2, Gift as GiftIcon, Lightbulb } from 'lucide-react';
+import { ExternalLink, Copy, Check, Edit2, Trash2 } from 'lucide-react';
 import { Gift } from '../types';
 import { detectGiftEmoji } from '../lib/emojiUtils';
 
@@ -85,9 +85,9 @@ export const GiftCard: React.FC<GiftCardProps> = ({
                 <span className="truncate">{domain}</span>
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-amber-500/15 text-amber-300 text-[10px] font-medium border border-amber-500/25">
-                <Lightbulb className="w-2.5 h-2.5" />
-                <span>Idea abierta</span>
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-amber-400/90 truncate">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span className="truncate">Opción abierta</span>
               </span>
             )}
 
@@ -106,63 +106,63 @@ export const GiftCard: React.FC<GiftCardProps> = ({
         </div>
 
         {/* Actions Bottom */}
-        <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-1.5 mt-1.5">
-          <div className="flex flex-wrap items-center gap-1.5 flex-1 min-w-0">
-            {gift.url ? (
-              <>
-                <a
-                  href={gift.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 hover:text-white text-xs font-medium border border-emerald-500/30 transition-all text-center"
-                >
-                  <span>Ver sitio web</span>
-                  <ExternalLink className="w-3 h-3 shrink-0" />
-                </a>
+        {(gift.url || isAdmin) && (
+          <div className="pt-2 border-t border-white/5 flex flex-wrap items-center justify-between gap-1.5 mt-1.5">
+            <div className="flex flex-wrap items-center gap-1.5 flex-1 min-w-0">
+              {gift.url && (
+                <>
+                  <a
+                    href={gift.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 hover:text-white text-xs font-medium border border-emerald-500/30 transition-all text-center"
+                  >
+                    <span>Ver sitio web</span>
+                    <ExternalLink className="w-3 h-3 shrink-0" />
+                  </a>
 
+                  <button
+                    onClick={handleCopyLink}
+                    title={copied ? '¡Copiado al portapapeles!' : 'Copiar enlace'}
+                    className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-medium border border-white/10 transition-all cursor-pointer shrink-0"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-3 h-3 text-emerald-400" />
+                        <span className="text-emerald-400 font-semibold">¡Copiado!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3 h-3 text-slate-400" />
+                        <span>Copiar enlace</span>
+                      </>
+                    )}
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Admin Edit/Delete */}
+            {isAdmin && (
+              <div className="flex items-center gap-1 shrink-0 ml-auto">
                 <button
-                  onClick={handleCopyLink}
-                  title={copied ? '¡Copiado al portapapeles!' : 'Copiar enlace'}
-                  className="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-medium border border-white/10 transition-all cursor-pointer shrink-0"
+                  onClick={() => onEdit(gift)}
+                  title="Editar"
+                  className="p-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all cursor-pointer"
                 >
-                  {copied ? (
-                    <>
-                      <Check className="w-3 h-3 text-emerald-400" />
-                      <span className="text-emerald-400 font-semibold">¡Copiado!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3 h-3 text-slate-400" />
-                      <span>Copiar enlace</span>
-                    </>
-                  )}
+                  <Edit2 className="w-3 h-3" />
                 </button>
-              </>
-            ) : (
-              <span className="text-[10px] text-slate-400 italic">Cualquier marca o modelo</span>
+                <button
+                  onClick={() => onDelete(gift.id)}
+                  title="Eliminar"
+                  className="p-1 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 transition-all cursor-pointer"
+                >
+                  <Trash2 className="w-3 h-3" />
+                </button>
+              </div>
             )}
           </div>
-
-          {/* Admin Edit/Delete */}
-          {isAdmin && (
-            <div className="flex items-center gap-1 shrink-0 ml-1">
-              <button
-                onClick={() => onEdit(gift)}
-                title="Editar"
-                className="p-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all cursor-pointer"
-              >
-                <Edit2 className="w-3 h-3" />
-              </button>
-              <button
-                onClick={() => onDelete(gift.id)}
-                title="Eliminar"
-                className="p-1 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 transition-all cursor-pointer"
-              >
-                <Trash2 className="w-3 h-3" />
-              </button>
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );
