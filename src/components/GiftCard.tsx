@@ -51,7 +51,13 @@ export const GiftCard: React.FC<GiftCardProps> = ({
     <div className="group relative flex items-start gap-3 rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-emerald-500/30 transition-all p-3 duration-200">
       {/* Thumbnail Left (Compact) */}
       <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-xl overflow-hidden bg-black/40 border border-white/10 shrink-0 flex items-center justify-center">
-        {gift.image_url && !imgError ? (
+        {gift.image_url?.startsWith('emoji:') ? (
+          <div className="flex items-center justify-center p-1">
+            <span className="text-3xl sm:text-4xl select-none filter drop-shadow-md transition-transform group-hover:scale-110 duration-200">
+              {gift.image_url.replace('emoji:', '')}
+            </span>
+          </div>
+        ) : gift.image_url && !imgError ? (
           <img
             src={gift.image_url}
             alt={gift.name}
@@ -110,7 +116,7 @@ export const GiftCard: React.FC<GiftCardProps> = ({
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 hover:text-white text-xs font-medium border border-emerald-500/30 transition-all text-center"
                 >
-                  <span>Ver en sitio web</span>
+                  <span>Ver sitio web</span>
                   <ExternalLink className="w-3 h-3 shrink-0" />
                 </a>
 

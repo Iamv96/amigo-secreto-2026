@@ -12,7 +12,7 @@ import {
   Lightbulb,
 } from 'lucide-react';
 import { Gift, Participant } from '../types';
-import { detectGiftEmoji } from '../lib/emojiUtils';
+import { detectGiftEmoji, POPULAR_EMOJIS } from '../lib/emojiUtils';
 
 interface GiftModalProps {
   isOpen: boolean;
@@ -308,7 +308,27 @@ export const GiftModal: React.FC<GiftModalProps> = ({
               </button>
             </div>
 
-            {imageUrl ? (
+            {imageUrl.startsWith('emoji:') ? (
+              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/10 mb-2">
+                <div className="w-12 h-12 rounded-lg bg-black/40 border border-white/10 shrink-0 flex items-center justify-center text-2xl shadow-inner">
+                  {imageUrl.replace('emoji:', '')}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-white font-medium flex items-center gap-1.5">
+                    <span>Emoji seleccionado:</span>
+                    <span className="text-base">{imageUrl.replace('emoji:', '')}</span>
+                  </p>
+                  <p className="text-[10px] text-slate-400">Personalizado para esta tarjeta</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setImageUrl('')}
+                  className="text-xs text-rose-400 hover:text-rose-300 px-2 py-1 rounded-md hover:bg-rose-500/10 transition-colors"
+                >
+                  Restablecer
+                </button>
+              </div>
+            ) : imageUrl ? (
               <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/10 mb-2">
                 <img
                   src={imageUrl}
@@ -328,20 +348,40 @@ export const GiftModal: React.FC<GiftModalProps> = ({
                 </button>
               </div>
             ) : (
-              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/10 mb-2">
-                <div className="w-12 h-12 rounded-lg bg-black/40 border border-white/10 shrink-0 flex items-center justify-center text-2xl shadow-inner">
-                  {detectGiftEmoji(name)}
+              <div className="space-y-2 mb-2">
+                <div className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="w-12 h-12 rounded-lg bg-black/40 border border-white/10 shrink-0 flex items-center justify-center text-2xl shadow-inner">
+                    {detectGiftEmoji(name)}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-white font-medium flex items-center gap-1.5">
+                      <span>Emoji para miniatura:</span>
+                      <span className="text-base">{detectGiftEmoji(name)}</span>
+                    </p>
+                    <p className="text-[10px] text-slate-400">
+                      {name.trim()
+                        ? `Asignado automáticamente para "${name}"`
+                        : 'Escribe el nombre del regalo arriba para ver su emoji'}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs text-white font-medium flex items-center gap-1.5">
-                    <span>Emoji para miniatura:</span>
-                    <span className="text-base">{detectGiftEmoji(name)}</span>
-                  </p>
-                  <p className="text-[10px] text-slate-400">
-                    {name.trim()
-                      ? `Asignado automáticamente para "${name}"`
-                      : 'Escribe el nombre del regalo arriba para ver su emoji'}
-                  </p>
+
+                {/* Quick Emoji Picker */}
+                <div className="pt-1.5">
+                  <p className="text-[10px] text-slate-400 mb-1.5 font-medium">O elige un emoji manualmente:</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {POPULAR_EMOJIS.map((em) => (
+                      <button
+                        key={em}
+                        type="button"
+                        onClick={() => setImageUrl(`emoji:${em}`)}
+                        className="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-sm transition-transform active:scale-90 cursor-pointer"
+                        title={`Usar emoji ${em}`}
+                      >
+                        {em}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -349,10 +389,10 @@ export const GiftModal: React.FC<GiftModalProps> = ({
             {showCustomImage && (
               <input
                 type="url"
-                value={imageUrl}
+                value={imageUrl.startsWith('emoji:') ? '' : imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="https://ejemplo.com/foto-producto.jpg"
-                className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+                className="w-full bg-white/[0.05] border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 mt-2"
               />
             )}
           </div>
